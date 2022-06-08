@@ -1,0 +1,3 @@
+﻿using QuickSort;
+
+SortTester.Run();

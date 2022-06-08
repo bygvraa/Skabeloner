@@ -1,0 +1,3 @@
+﻿using MergeSort;
+
+SortTester.Run();
