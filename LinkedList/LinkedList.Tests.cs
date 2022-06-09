@@ -25,6 +25,18 @@ namespace LinkedList.Tests
         }
 
         [TestMethod]
+        public void TestAddLast()
+        {
+            LinkedList list = new();
+            list.AddFirst(mads);
+            list.AddFirst(kristian);
+            list.AddLast(kell);
+            list.AddFirst(torill);
+
+            Assert.AreEqual(kell, list.GetLast());
+        }
+
+        [TestMethod]
         public void TestRemoveFirst()
         {
             LinkedList list = new ();

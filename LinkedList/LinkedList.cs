@@ -10,6 +10,26 @@
             first = node;
         }
 
+        internal void AddLast(User user)
+        {
+            Node node = first;
+
+            while (node is not null)
+            {
+                if (node.Next is not null)
+                {
+                    // Gå videre til næste node
+                    node = node.Next;
+                }
+                else
+                {
+                    // Hvis den finder den sidste node
+                    node.Next = new(user, null!);
+                    break;
+                }
+            }
+        }
+
         internal User RemoveFirst()
         {
             Node node = first;
