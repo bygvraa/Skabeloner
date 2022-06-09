@@ -15,7 +15,7 @@ namespace LinkedList.Tests
         readonly User simon    = new(7, "Simon");
 
         [TestMethod]
-        public void TestSortedAdd()
+        public void TestAdd()
         {
             SortedLinkedList list = new();
             list.Add(mads);
@@ -28,5 +28,49 @@ namespace LinkedList.Tests
 
             Assert.AreEqual(kristian, list.GetFirst());
         }
+
+        [TestMethod]
+        public void TestRemove()
+        {
+            SortedLinkedList list = new();
+            list.Add(kristian);
+            list.Add(mads);
+            list.Add(torill);
+            list.Add(henrik);
+            list.Add(klaus);
+
+            list.Remove(mads);
+
+            Assert.AreEqual(4, list.Count());
+
+            list.Remove(kristian);
+
+            Assert.AreEqual(3, list.Count());
+        }
+
+        [TestMethod]
+        public void TestGetLast()
+        {
+            SortedLinkedList list = new();
+            list.Add(kristian);
+            list.Add(mads);
+            list.Add(torill);
+            list.Add(henrik);
+            list.Add(klaus);
+
+            Assert.AreEqual(klaus.Id, list.GetLast().Id);
+        }
+
+        [TestMethod]
+        public void TestCount()
+        {
+            SortedLinkedList list = new();
+            list.Add(kristian);
+            list.Add(mads);
+            list.Add(torill);
+
+            Assert.AreEqual(3, list.Count());
+        }
+
     }
 }
