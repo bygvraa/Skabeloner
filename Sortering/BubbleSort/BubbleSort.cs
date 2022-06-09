@@ -11,15 +11,23 @@ public class BubbleSort
 
     public static void Sort(int[] array)
     {
-        for (int i = array.Length - 1; i >= 0; i--)
+        // Det ydre loop vælger et element 'i' fra 'array'
+        for (int i = 0; i < array.Length; i++)
         {
-            for (int j = 0; j <= i - 1; j++)
+            // Det indre loop bruges til at sammenligne 'i' med resten af elementerne 'j' i arrayet
+            for (int j = i + 1; j < array.Length; j++)
             {
-                if (array[j] > array[j + 1])
+                // Hvis 'i' er større end 'j'
+                if (array[i] > array[j])
                 {
-                    Swap(array, j, j + 1);
+                    Swap(array, i, j);
                 }
             }
+        }
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write(array[i] + " ");
         }
     }
 }
