@@ -1,5 +1,11 @@
 namespace BubbleSort;
 
+/* BubbleSort O(n²) */
+
+/* GIF
+ * https://www.resultswebdev.com/wp-content/themes/results-website-design/uploads/bubble-sort-animation2.gif
+ */
+
 public class BubbleSort
 {
     private static void Swap(int[] array, int i, int j)
