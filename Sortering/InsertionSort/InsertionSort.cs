@@ -1,6 +1,6 @@
 ﻿namespace InsertionSort;
 
-/* BESKRIVELSE
+/* InsertionSort O(n²)
  * InsertionSort er en simpel algoritme, der fungerer lidt på samme måde,
  * som når man sorterer et sæt spillekort.
  * Man starter med et array (sættet), der deles i to: en sorteret bunke og en usorteret bunke.
