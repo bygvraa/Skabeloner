@@ -1,29 +1,60 @@
 ﻿namespace InsertionSort;
 
+/* BESKRIVELSE
+ * InsertionSort er en simpel algoritme, der fungerer lidt på samme måde,
+ * som når man sorterer et sæt spillekort.
+ * Man starter med et array (sættet), der deles i to: en sorteret bunke og en usorteret bunke.
+ * Værdier (kort) fra den usorterede bunke indsættes så én efter én på deres rette plads i den sorterede bunke.
+ */
+
+/* GIF
+ * https://www.csfieldguide.org.nz/static/interactives/sorting-algorithm-comparison/img/selection-sort.gif
+ */
+
 public class InsertionSort
 {
     public static void Sort(int[] array)
     {
-        // Løb usorteret del af array igennem
+        Console.WriteLine("Usorteret array:");
+        PrintArray(array);
+
+        // Loop der løber gennem den usorterede del af arrayet
         for (int i = 1; i < array.Length; i++)
         {
-            int next = array[i]; // Næste tal
-                                 // Skub sorterede elementer én plads op
-            int j = i;
-            bool found = false;
-            while (!found && j > 0)
+            int key = array[i];     // Den usorterede værdi, der nu skal sorteres
+            int j = i;              // Den værdi, der bruges til at gå gennem den sorterede del af arrayet
+
+            // while-loop der kører baglæns gennem for-loopet, fra den aktuelle værdi 'key',
+            // indtil den finder 'key's rette plads i den sorterede del af arrayet
+            while (j > 0)
             {
-                if (next >= array[j - 1])
+                // Hvis 'key' er større eller lig med værdien fra det sorterede array, som 'key' sammenlignes med:
+                if (key >= array[j - 1])
                 {
-                    found = true;
+                    // Afslut while-loopet, for da 'key' er større eller lig 'array[j - 1]', så har 'key' fundet sin rette plads
+                    break;
                 }
                 else
                 {
+                    // Flyt værdien på indeks 'array[j - 1]' én plads til højre i arrayet, og gå så vidre til næste værdi
                     array[j] = array[j - 1];
                     j--;
                 }
             }
-            array[j] = next; // Tallet indsættes på sin plads
+            // Værdien 'key' indsættes på sin plads i det sorterede array
+            array[j] = key;
         }
+
+        Console.WriteLine("Sorteret array:");
+        PrintArray(array);
+    }
+
+    public static void PrintArray(int[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write($" {array[i]}");
+        }
+        Console.WriteLine("\n");
     }
 }
