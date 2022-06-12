@@ -11,13 +11,15 @@
         private Node[] buckets;     // buckets = antallet af pladser i LinkedList
         private int size;           // size    = antallet af fyldte pladser 
         
-        private readonly double DEFAULT_LOADFACTOR = 0.75;      // Afgør hvor meget plads listen må være fyldt, før at listens størrelse fordobles
+        private readonly double DEFAULT_LOADFACTOR = 0.75;      // Afgør hvor meget plads listen må være fyldt før at listens størrelse fordobles
 
         public int Size() { return size; }
 
 
         public bool Add(Object x)
         {
+            ReHash();                   // Tjekker om listen skal gøres større
+
             int h = HashValue(x);       // Hash-værdien for objektet
 
             Node bucket = buckets[h];   // Den bucket, som 'h' tilhører
@@ -43,12 +45,11 @@
             {
                 buckets[h] = new Node(x, buckets[h]);
                 size++;
-                ReHash();
-                Console.WriteLine($"{x} er blevet tilføjet.");
 
+                Console.WriteLine($"{x} er blevet tilføjet.");
                 return true;
             }
-
+            Console.WriteLine($"{x} kunne ikke tilføjes.");
             return false;
         }
 
@@ -185,10 +186,12 @@
 
     public interface IHashSet
     {
+        public int Size();
+
         public bool Add(Object x);
         public bool Remove(Object x);
         public bool Contains(Object x);
-        public int Size();
+        public void ReHash();
     }
 
     public class Node
@@ -201,5 +204,4 @@
         public Object Data { get; set; }
         public Node Next { get; set; }
     }
-
 }

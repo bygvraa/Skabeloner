@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Hashing.Chaining
+namespace Hashing.Chaining.Tests
 {
     [TestClass]
     public class Chaining_Tests
@@ -18,9 +18,11 @@ namespace Hashing.Chaining
 			names.Add("Sarah");
 			names.Add("Adam");
 			names.Add("Tony");
+
 			Assert.AreEqual(9, names.Size());
 
 			names.Add("Adam");
+
 			Assert.AreEqual(9, names.Size());
 		}
 
@@ -39,6 +41,7 @@ namespace Hashing.Chaining
 			Assert.AreEqual(3, names.Size());
 
 			names.Remove("Romeo");
+
 			Assert.AreEqual(3, names.Size());
 		}
 
@@ -84,6 +87,7 @@ namespace Hashing.Chaining
 			names.Add("Katherine");
 			names.Add("Juliet");
 			names.Add("Romeo");
+
 			Assert.AreEqual(12, names.Size());
 		}
 	}
