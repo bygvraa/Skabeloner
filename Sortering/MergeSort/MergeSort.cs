@@ -1,5 +1,13 @@
 ﻿namespace MergeSort;
 
+/* MergeSort O(n * log n)
+ * Rigtig god, men kompleks.
+ */
+
+/* GIF
+ * https://i.imgur.com/eA9faEm.gif
+ */
+
 public static class MergeSort
 {
     public static void Sort(int[] array)
@@ -46,7 +54,6 @@ public static class MergeSort
 
         while (e1 < n1 && e2 < n2)
         {
-
             // Hvis værdien i s2 er højere eller lig med værdien i s1
             if (s1[e1] <= s2[e2])
             {
