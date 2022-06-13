@@ -15,9 +15,6 @@ public class InsertionSort
 {
     public static void Sort(int[] array)
     {
-        Console.WriteLine("Usorteret array:");
-        PrintArray(array);
-
         // Loop der løber gennem den usorterede del af arrayet
         for (int i = 1; i < array.Length; i++)
         {
@@ -44,17 +41,5 @@ public class InsertionSort
             // Værdien 'key' indsættes på sin plads i det sorterede array
             array[j] = key;
         }
-
-        Console.WriteLine("Sorteret array:");
-        PrintArray(array);
-    }
-
-    public static void PrintArray(int[] array)
-    {
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.Write($" {array[i]}");
-        }
-        Console.WriteLine("\n");
     }
 }
