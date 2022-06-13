@@ -17,9 +17,6 @@ public class BubbleSort
 
     public static void Sort(int[] array)
     {
-        Console.WriteLine("Usorteret array:");
-        PrintArray(array);
-
         // Det ydre loop vælger et element 'i' fra 'array'
         for (int i = 0; i < array.Length; i++)
         {
@@ -34,18 +31,5 @@ public class BubbleSort
             }
         }
 
-        Console.WriteLine("Sorteret array:");
-        PrintArray(array);
-
     }
-
-    public static void PrintArray(int[] array)
-    {
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.Write($" {array[i]}");
-        }
-        Console.WriteLine("\n");
-    }
-
 }
