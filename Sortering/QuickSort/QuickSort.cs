@@ -1,12 +1,21 @@
 ﻿namespace QuickSort;
 
+/* QuickSort O(n²)
+ * Performer i praksis bedre end MergeSort, men worst case er faktisk O(n²).
+ * Det er dog sjældent, at man får worst case med en QuickSort.
+ */
+
+/* GIF
+ * https://www.csfieldguide.org.nz/static/interactives/sorting-algorithm-comparison/img/quick-sort.gif
+ */
+
 public static class QuickSort
 {
     private static void Swap(int[] array, int i, int j)
     {
-        int tmp = array[i];
+        int temp = array[i];
         array[i] = array[j];
-        array[j] = tmp;
+        array[j] = temp;
     }
 
     private static void _quickSort(int[] array, int low, int high)
@@ -28,7 +37,7 @@ public static class QuickSort
         int i = low + 1;
         int j = high;
 
-        // Hvis i bliver større end j, så stopper loopet
+        // Hvis 'i' bliver større end 'j', så stopper loopet
         while (i <= j)
         {
             // Hvis værdien i arrayet er lig eller mindre end pivot'en:
